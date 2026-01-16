@@ -1,0 +1,18 @@
+<div
+  class="rounded-lg border bg-white text-gray-950 shadow-sm dark:border-gray-800 dark:bg-gray-950 dark:text-gray-50"
+>
+  <!-- Card Header: Cabeçalho do card (pode conter título e descrição) -->
+  <ng-content select="app-card-header"></ng-content>
+
+  <!-- Card Content: Conteúdo principal do card -->
+  <ng-content select="app-card-content"></ng-content>
+
+  <!-- Card Footer: Rodapé do card (geralmente para ações) -->
+  <ng-content select="app-card-footer"></ng-content>
+
+  <!-- Card Action: Área de ação específica -->
+  <ng-content select="app-card-action"></ng-content>
+
+  <!-- Fallback: Qualquer conteúdo que não corresponda aos seletores acima -->
+  <ng-content></ng-content>
+</div>
