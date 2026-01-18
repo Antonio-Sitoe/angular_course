@@ -1,0 +1,50 @@
+<section class="flex flex-col gap-2 w-full h-full">
+  <div class="flex flex-col gap-0 border border-gray-200 rounded-lg overflow-hidden bg-white">
+    <div class="px-4 py-3 text-center border-b border-gray-200">
+      <h2 class="text-lg font-semibold text-gray-900">Detalhes do usuario</h2>
+    </div>
+
+    <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
+      <span class="text-base font-medium text-gray-900">Nome:</span>
+      <span class="text-sm text-gray-700">{{ user.nome }}</span>
+    </div>
+
+    <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
+      <span class="text-base font-medium text-gray-900">Email:</span>
+      <span class="text-sm text-gray-700">{{ user.email }}</span>
+    </div>
+
+    <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
+      <span class="text-base font-medium text-gray-900">Telefone:</span>
+      <span class="text-sm text-gray-700">{{ user.telefone }}</span>
+    </div>
+
+    <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
+      <span class="text-base font-medium text-gray-900">Endereço:</span>
+      <span class="text-sm text-gray-700"
+        >{{ user.endereco.rua }}, {{ user.endereco.numero }}, {{ user.endereco.cidade }},
+        {{ user.endereco.estado }}</span
+      >
+    </div>
+
+    <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
+      <span class="text-base font-medium text-gray-900">Data de cadastro:</span>
+      <span class="text-sm text-gray-700">{{ user.dataCadastro }}</span>
+    </div>
+
+    <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
+      <span class="text-base font-medium text-gray-900">Status:</span>
+      <span class="text-sm text-gray-700">{{ user.ativo ? 'Ativo' : 'Inativo' }}</span>
+    </div>
+
+    <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
+      <span class="text-base font-medium text-gray-900">Função:</span>
+      <span class="text-sm text-gray-700">{{ user.funcao }}</span>
+    </div>
+
+    <div class="px-4 py-3 flex justify-between items-center">
+      <span class="text-base font-medium text-gray-900">Data de último acesso:</span>
+      <span class="text-sm text-gray-700">{{ user.dataCadastro }}</span>
+    </div>
+  </div>
+</section>

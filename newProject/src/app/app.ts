@@ -1,29 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { Button } from './components/card/button/button';
-import { Card } from './components/card/card/card';
-import { CardHeader } from './components/card/card-header/card-header';
-import { CardTitle } from './components/card/card-title/card-title';
-import { CardDescription } from './components/card/card-description/card-description';
-import { CardContent } from './components/card/card-content/card-content';
-import { CardFooter } from './components/card/card-footer/card-footer';
-import { CardAction } from './components/card/card-action/card-action';
-import { FormsModule } from '@angular/forms';
-import { StatusPipe } from './pipes/status-pipe';
+import { UserDetails } from './components/user-details/user-details';
+import { Filter } from './components/filter/filter';
+import { UsersListComponent } from './components/users-list/users-list.component';
+import { IUser } from './interfaces/user/user.interface';
+import { UsersList } from './data/users-list';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    FormsModule,
-    StatusPipe,
-    Card,
-    Button,
-    CardHeader,
-    CardTitle,
-    CardDescription,
-    CardContent,
-    CardFooter,
-    CardAction,
-  ],
+  imports: [UserDetails, Filter, UsersListComponent],
   templateUrl: './app.html',
 })
 export class App {
@@ -33,6 +17,8 @@ export class App {
 
   isBig: boolean = false;
   isSmall: boolean = false;
+
+  selectedUser: IUser = UsersList[0];
 
   listPessoas = [
     {

@@ -1,51 +1,13 @@
-<section class="flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 gap-6 p-4">
-  @for(pessoa of listPessoas; track pessoa.name){
-  <app-card class="w-full max-w-md">
-    <app-card-header>
-      <h2 class="{{ isBig ? 'text-4xl' : isSmall ? 'text-2xl' : '' }}">
-        {{ pessoa.name }}
-      </h2>
-      <h2 class="text-sm text-gray-600 dark:text-gray-400">
-        {{ pessoa.status | status }}
-      </h2>
-      <app-card-description>
-        {{ pessoa.age }}
-      </app-card-description>
-    </app-card-header>
-    <app-card-footer class="flex items-center gap-2">
-      <app-button (onClick)="onActionButtonClick()">Action Button</app-button>
-      <app-button (onClick)="onCanceButtonClick()">Cancel</app-button>
-    </app-card-footer>
-  </app-card>
-
-  }
-
-  <!-- Exemplo 2: Card simples com apenas header e content -->
-  <app-card class="w-full max-w-md">
-    <app-card-header>
-      <app-card-title>Simple Card</app-card-title>
-    </app-card-header>
-
-    <app-card-content>
-      <p>This card only has a header and content, no footer.</p>
-    </app-card-content>
-  </app-card>
-
-  <!-- Exemplo 3: Card com card-action separado -->
-  <app-card class="w-full max-w-md">
-    <app-card-header>
-      <app-card-title>Card with Action</app-card-title>
-      <app-card-description> This card uses card-action component </app-card-description>
-    </app-card-header>
-
-    <app-card-content>
-      <p>Content area</p>
-    </app-card-content>
-
-    <app-card-action>
-      <app-button>Primary Action</app-button>
-    </app-card-action>
-  </app-card>
-
-  <section></section>
-</section>
+<div class="flex h-screen">
+  <div class="flex flex-col h-full w-[70%]">
+    <div class="grow">
+      <app-filter />
+    </div>
+    <div class="h-[80%]">
+      <!-- <app-users-list [usersList]="usersList" /> -->
+    </div>
+  </div>
+  <div class="w-[30%] max-h-screen">
+    <app-user-details [user]="selectedUser" />
+  </div>
+</div>
