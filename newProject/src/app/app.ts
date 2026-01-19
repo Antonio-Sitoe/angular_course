@@ -14,46 +14,30 @@ export class App {
   protected readonly title = signal('newProject');
   name: string = '';
   toggle: boolean = false;
+  usersList = UsersList;
 
   isBig: boolean = false;
   isSmall: boolean = false;
 
-  selectedUser: IUser = UsersList[0];
+  selectedUser: IUser | null = null;
 
-  listPessoas = [
-    {
-      name: 'John Doe',
-      age: 20,
-      status: 1,
-    },
-    {
-      name: 'João Doe',
-      age: 21,
-      status: 2,
-    },
-    {
-      name: 'Maria Doe',
-      age: 22,
-      status: 1,
-    },
-  ];
+  onUserSelected(user: IUser) {
+    this.selectedUser = user;
+  }
 
   onActionButtonClick() {
-    console.log('Root: Action button clicked', this.name);
     this.toggle = !this.toggle;
     this.isSmall = true;
     this.isBig = false;
   }
 
   onCanceButtonClick() {
-    console.log('Root: Cancel button clicked');
     this.toggle = !this.toggle;
     this.isBig = true;
     this.isSmall = false;
   }
 
   onNameChange(value: string) {
-    console.log('Root: Name changed', value);
     this.name = value;
   }
 }

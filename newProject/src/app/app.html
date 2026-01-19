@@ -4,10 +4,12 @@
       <app-filter />
     </div>
     <div class="h-[80%]">
-      <!-- <app-users-list [usersList]="usersList" /> -->
+      <app-users-list [usersList]="usersList" (userSelected)="onUserSelected($event)"/>
     </div>
   </div>
   <div class="w-[30%] max-h-screen">
+    @if(selectedUser) { 
     <app-user-details [user]="selectedUser" />
+    }
   </div>
 </div>

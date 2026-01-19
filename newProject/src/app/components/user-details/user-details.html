@@ -6,7 +6,7 @@
 
     <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
       <span class="text-base font-medium text-gray-900">Nome:</span>
-      <span class="text-sm text-gray-700">{{ user.nome }}</span>
+      <span class="text-sm text-gray-700">{{ user.nome|dasIfEmpty }}</span>
     </div>
 
     <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
@@ -16,35 +16,34 @@
 
     <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
       <span class="text-base font-medium text-gray-900">Telefone:</span>
-      <span class="text-sm text-gray-700">{{ user.telefone }}</span>
+      <span class="text-sm text-gray-700">{{ user.telefone | phone }}</span>
     </div>
 
     <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
       <span class="text-base font-medium text-gray-900">Endereço:</span>
       <span class="text-sm text-gray-700"
-        >{{ user.endereco.rua }}, {{ user.endereco.numero }}, {{ user.endereco.cidade }},
-        {{ user.endereco.estado }}</span
+        >{{ user.endereco| adress }}</span
       >
     </div>
 
     <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
       <span class="text-base font-medium text-gray-900">Data de cadastro:</span>
-      <span class="text-sm text-gray-700">{{ user.dataCadastro }}</span>
+      <span class="text-sm text-gray-700">{{ user.dataCadastro | dasIfEmpty }}</span>
     </div>
 
     <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
       <span class="text-base font-medium text-gray-900">Status:</span>
-      <span class="text-sm text-gray-700">{{ user.ativo ? 'Ativo' : 'Inativo' }}</span>
+      <span class="text-sm text-gray-700">{{ formatStatus(user.ativo) }}</span>
     </div>
 
     <div class="px-4 py-3 border-b border-gray-200 flex justify-between items-center">
       <span class="text-base font-medium text-gray-900">Função:</span>
-      <span class="text-sm text-gray-700">{{ user.funcao }}</span>
+      <span class="text-sm text-gray-700">{{ user.funcao | dasIfEmpty }}</span>
     </div>
 
     <div class="px-4 py-3 flex justify-between items-center">
       <span class="text-base font-medium text-gray-900">Data de último acesso:</span>
-      <span class="text-sm text-gray-700">{{ user.dataCadastro }}</span>
+      <span class="text-sm text-gray-700">{{ user.dataCadastro | date:'dd/MM/yyyy' }}</span>
     </div>
   </div>
 </section>
