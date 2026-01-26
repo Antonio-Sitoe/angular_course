@@ -16,6 +16,7 @@ export class Filter {
     endDate: undefined,
     status: undefined,
   };
+
   statusList = [
     { description: 'Ativo', value: true },
     { description: 'Inativo', value: false },

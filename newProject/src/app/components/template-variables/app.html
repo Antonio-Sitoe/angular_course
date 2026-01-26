@@ -1,0 +1,8 @@
+<div class="flex h-screen flex-col items-center p-4 gap-2">
+   <input type="text" #meuInput ngModel placeholder="Search users..." class="w-full p-2 border-b" />
+   <p>
+    <strong>
+    Valor
+   </strong> {{meuInput.value}}</p>
+   <button (click)="changeDetetion(meuInput)">Click</button>
+</div>
