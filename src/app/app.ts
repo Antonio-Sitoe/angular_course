@@ -4,6 +4,7 @@ import { Filho } from "./components/filho/filho";
 import { HighlightDirective } from "./directivas/hightligth";
 import { DisableDirective } from "./directivas/disable.directive";
 import { StyleDirective } from "./directivas/style.directive";
+import { ListenerDirective } from "./directivas/listener.directive";
 
 @Component({
   selector: "app-root",
@@ -13,6 +14,7 @@ import { StyleDirective } from "./directivas/style.directive";
     Filho,
     HighlightDirective,
     DisableDirective,
+    ListenerDirective,
     StyleDirective,
   ],
   templateUrl: "./app.html",
