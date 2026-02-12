@@ -1,59 +1,115 @@
-# NewProject
+# Angular Course
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+Um projeto de aprendizado e prática de Angular, desenvolvido durante um curso de Angular.
 
-## Development server
+## 🚀 Sobre o Projeto
 
-To start a local development server, run:
+Este repositório contém exemplos e exercícios práticos do curso de Angular, cobrindo conceitos fundamentais e avançados do framework.
+
+## 🛠️ Tecnologias
+
+- [Angular](https://angular.dev/) v21.0.4
+- [TypeScript](https://www.typescriptlang.org/)
+- [Angular CLI](https://github.com/angular/angular-cli)
+- [Vitest](https://vitest.dev/) para testes
+
+## 📋 Pré-requisitos
+
+- Node.js (versão LTS recomendada)
+- npm ou yarn
+- Angular CLI
+
+```bash
+npm install -g @angular/cli
+```
+
+## 🔧 Instalação
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/Antonio-Sitoe/angular_course.git
+```
+
+2. Acesse o diretório do projeto:
+```bash
+cd angular_course
+```
+
+3. Instale as dependências:
+```bash
+npm install
+```
+
+## 💻 Executar o Projeto
+
+### Servidor de Desenvolvimento
+
+Para iniciar o servidor de desenvolvimento:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navegue para `http://localhost:4200/`. A aplicação será recarregada automaticamente quando você modificar os arquivos fonte.
 
-## Code scaffolding
+### Build de Produção
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Para compilar o projeto:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Os arquivos compilados serão armazenados no diretório `dist/`.
 
-## Running unit tests
+## 🧪 Testes
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Testes Unitários
+
+Para executar os testes unitários com Vitest:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+### Testes E2E
 
-For end-to-end (e2e) testing, run:
+Para executar testes end-to-end:
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📦 Scaffolding
 
-## Additional Resources
+O Angular CLI inclui ferramentas poderosas de scaffolding. Para gerar um novo componente:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+ng generate component nome-do-componente
+```
+
+Para ver todos os schematics disponíveis (componentes, diretivas, pipes, etc.):
+
+```bash
+ng generate --help
+```
+
+## 📚 Recursos Adicionais
+
+- [Documentação do Angular](https://angular.dev/)
+- [Angular CLI Reference](https://angular.dev/tools/cli)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+
+## 👤 Autor
+
+**Antonio Sitoe**
+
+- GitHub: [@Antonio-Sitoe](https://github.com/Antonio-Sitoe)
+
+## 📝 Licença
+
+Este projeto é um material de estudo pessoal.
+
+---
+
+⭐ Desenvolvido durante o curso de Angular
