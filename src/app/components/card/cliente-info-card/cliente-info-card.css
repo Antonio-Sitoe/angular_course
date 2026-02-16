@@ -1,0 +1,75 @@
+:host {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+}
+
+:host ::ng-deep app-card > div {
+  overflow: hidden;
+}
+
+/* Header com gradiente verde/turquesa */
+:host ::ng-deep app-card-header > div {
+  background: linear-gradient(to right, #5eead4, #99f6e4);
+  padding: 12px 16px;
+}
+
+.cliente-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1f2937;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+/* Lista de informações */
+:host ::ng-deep app-card-content > div {
+  padding: 0;
+}
+
+.info-content {
+  background-color: white;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.info-valor {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 600;
+}

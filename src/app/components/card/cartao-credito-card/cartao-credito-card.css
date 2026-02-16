@@ -1,0 +1,141 @@
+/* Override dos estilos do card-root para este componente */
+:host {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+}
+
+:host ::ng-deep app-card > div {
+  overflow: hidden;
+}
+
+/* Header Laranja */
+:host ::ng-deep app-card-header > div {
+  background: linear-gradient(to right, #f97316, #fb923c);
+  padding: 12px 16px;
+}
+
+.cartao-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.header-title {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+/* Informações do cartão */
+:host ::ng-deep app-card-content:first-of-type > div {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cartao-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cartao-dados {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.numero-cartao {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.nome-cliente {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.bandeira {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Lista de Limites */
+:host ::ng-deep app-card-content:nth-of-type(2) > div {
+  padding: 0;
+}
+
+.limites-content {
+  background-color: white;
+}
+
+.limite-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.limite-row:last-child {
+  border-bottom: none;
+}
+
+.limite-label {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.limite-valor {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 600;
+}
+
+/* Footer - Limite Total */
+:host ::ng-deep app-card-footer > div {
+  background-color: #f3f4f6;
+  padding: 14px 20px;
+  border-top: 1px solid #d1d5db;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.total-label {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.total-valor {
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 700;
+}

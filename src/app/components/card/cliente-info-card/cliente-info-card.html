@@ -1,0 +1,38 @@
+<app-card>
+  <!-- Header com gradiente verde/turquesa -->
+  <app-card-header>
+    <div class="cliente-header">
+      <div class="header-left">
+        <span class="icon-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </span>
+        <span class="header-title">Informações do Cliente</span>
+      </div>
+    </div>
+  </app-card-header>
+
+  <!-- Lista de informações -->
+  <app-card-content>
+    <div class="info-content">
+      @for (info of informacoes; track info.label) {
+        <div class="info-row">
+          <span class="info-label">{{ info.label }}</span>
+          <span class="info-valor">{{ info.valor }}</span>
+        </div>
+      }
+    </div>
+  </app-card-content>
+</app-card>

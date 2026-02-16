@@ -1,0 +1,49 @@
+<div class="saldos-card">
+  <!-- Header com fundo laranja -->
+  <div class="saldos-header">
+    <div class="header-left">
+      <span class="icon-container">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 6v6l4 2" />
+        </svg>
+      </span>
+      <span class="header-title">Saldos Disponíveis</span>
+    </div>
+    <div class="header-value">
+      {{ formatarMoeda(saldosDisponiveis) }}
+    </div>
+  </div>
+
+  <!-- Lista de saldos -->
+  <div class="saldos-content">
+    @for (saldo of saldos; track saldo.label) {
+      <div class="saldo-row">
+        <span class="saldo-label">{{ saldo.label }}</span>
+        <span class="saldo-valor">{{ formatarMoeda(saldo.valor) }}</span>
+      </div>
+    }
+  </div>
+
+  <!-- Footer com totais -->
+  <div class="saldos-footer">
+    <div class="footer-row">
+      <span class="footer-label">SALDO TOTAL</span>
+      <span class="footer-valor">{{ formatarMoeda(saldoTotal) }}</span>
+    </div>
+    <div class="footer-row">
+      <span class="footer-label">LIVRE PARA MOVIMENTAÇÃO</span>
+      <span class="footer-valor">{{ formatarMoeda(livreParaMovimentacao) }}</span>
+    </div>
+  </div>
+</div>

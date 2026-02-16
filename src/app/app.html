@@ -1,17 +1,7 @@
-<div class="flex h-screen flex-col items-center p-4 gap-2">
-  <h3>Meu Input</h3>
-  <input type="text" />
-  <app-filho #filhoCompo></app-filho>
-  <div appHighlight>
-    <h3>Componente Pai</h3>
-    <button appDisable>Butao disabled no filho</button>
-  </div>
-  <p>Paragrafo normal</p>
-  <p [attr.style]="'background-color: yellow;'">Atributo nimdeomd Paragrafo normal</p>
-  <p appStyle>HosingBindg</p>
-
-  <div>
-    <input type="text" appListener class="border rounded bg-amber-600" />
-    <button>Alterar Texto do Filho</button>
+<div class="flex h-screen flex-col items-center p-4 gap-4">
+  <div class="w-full grid grid-cols-3 gap-4">
+    <app-saldos-card></app-saldos-card>
+    <app-cartao-credito-card></app-cartao-credito-card>
+    <app-cliente-info-card></app-cliente-info-card>
   </div>
 </div>

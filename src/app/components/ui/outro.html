@@ -1,0 +1,15 @@
+<h3>Meu Input</h3>
+<input type="text" />
+<app-filho #filhoCompo></app-filho>
+<div appHighlight>
+  <h3>Componente Pai</h3>
+  <button appDisable>Butao disabled no filho</button>
+</div>
+<p>Paragrafo normal</p>
+<p [attr.style]="'background-color: yellow;'">Atributo nimdeomd Paragrafo normal</p>
+<p appStyle>HosingBindg</p>
+
+<div>
+  <input type="text" appListener class="border rounded bg-amber-600" />
+  <button>Alterar Texto do Filho</button>
+</div>

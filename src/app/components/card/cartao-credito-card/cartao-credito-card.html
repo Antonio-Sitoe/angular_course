@@ -1,0 +1,57 @@
+<app-card>
+  <!-- Header com fundo laranja -->
+  <app-card-header>
+    <div class="cartao-header">
+      <div class="header-left">
+        <span class="icon-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect width="20" height="14" x="2" y="5" rx="2" />
+            <line x1="2" x2="22" y1="10" y2="10" />
+          </svg>
+        </span>
+        <span class="header-title">Cartão de Crédito</span>
+      </div>
+    </div>
+  </app-card-header>
+
+  <!-- Informações do cartão -->
+  <app-card-content>
+    <div class="cartao-info">
+      <div class="cartao-dados">
+        <span class="numero-cartao">{{ numeroCartao }}</span>
+        <span class="nome-cliente">{{ nomeCliente }}</span>
+      </div>
+      <span class="bandeira">{{ bandeira }}</span>
+    </div>
+  </app-card-content>
+
+  <!-- Lista de limites -->
+  <app-card-content>
+    <div class="limites-content">
+      @for (limite of limites; track limite.label) {
+        <div class="limite-row">
+          <span class="limite-label">{{ limite.label }}</span>
+          <span class="limite-valor">{{ formatarMoeda(limite.valor) }}</span>
+        </div>
+      }
+    </div>
+  </app-card-content>
+
+  <!-- Limite Total Utilizado -->
+  <app-card-footer class="footer-total">
+    <div class="total-row">
+      <span class="total-label">Limite Total Utilizado</span>
+      <span class="total-valor">{{ formatarMoeda(limiteTotalUtilizado) }}</span>
+    </div>
+  </app-card-footer>
+</app-card>

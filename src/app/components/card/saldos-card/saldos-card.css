@@ -1,0 +1,100 @@
+.saldos-card {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.saldos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #f97316, #fb923c);
+  padding: 16px 20px;
+  color: white;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.header-title {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.header-value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Content */
+.saldos-content {
+  background-color: white;
+}
+
+.saldo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.saldo-row:last-child {
+  border-bottom: none;
+}
+
+.saldo-label {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.saldo-valor {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 600;
+}
+
+/* Footer */
+.saldos-footer {
+  background-color: #f3f4f6;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-top: 1px solid #d1d5db;
+}
+
+.footer-label {
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.footer-valor {
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 700;
+}
