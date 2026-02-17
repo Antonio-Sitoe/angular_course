@@ -1,10 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-card-title',
+  selector: "app-card-title",
   imports: [],
-  templateUrl: './card-title.html',
+  templateUrl: "./card-title.html",
 })
-export class CardTitle {
-  @Input() class: string = '';
-}
+export class CardTitle {}
