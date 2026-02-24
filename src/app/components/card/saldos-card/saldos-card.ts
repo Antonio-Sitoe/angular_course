@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { CommonModule, DatePipe } from "@angular/common";
 
 interface SaldoItem {
   label: string;
@@ -8,12 +8,14 @@ interface SaldoItem {
 
 @Component({
   selector: "app-saldos-card",
-  imports: [CommonModule],
+  imports: [CommonModule, DatePipe],
   templateUrl: "./saldos-card.html",
   styleUrl: "./saldos-card.css",
 })
 export class SaldosCard {
   saldosDisponiveis: number = 100;
+
+  dataAtual: Date = new Date();
 
   saldos: SaldoItem[] = [
     { label: "Conta Corrente", valor: 200 },

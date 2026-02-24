@@ -18,7 +18,12 @@
           <path d="M12 6v6l4 2" />
         </svg>
       </span>
-      <span class="header-title">Saldos Disponíveis</span>
+      <div class="grid gap-1">
+        <span class="header-title">Saldos Disponíveis</span>
+        <p class="text-xs text-gray-600">
+          Data: {{ dataAtual | date: "'Hoje e' EEEE 'de' MMMM 'de' yyyy" }}
+        </p>
+      </div>
     </div>
     <div class="header-value">
       {{ formatarMoeda(saldosDisponiveis) }}
