@@ -1,15 +1,12 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 
-@Pipe({ name: 'status' })
+@Pipe({ name: "status" })
 export class StatusPipe implements PipeTransform {
   transform(status: unknown): string {
-    switch (status) {
-      case 1:
-        return 'Ativo';
-      case 2:
-        return 'Inativo';
-      default:
-        return 'Desconhecido';
-    }
+    const statusMap: { [key: number]: string } = {
+      1: "Ativo",
+      2: "Inativo",
+    };
+    return statusMap[status as number] || "Desconhecido";
   }
 }

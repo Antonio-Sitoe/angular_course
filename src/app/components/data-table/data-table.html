@@ -1,0 +1,117 @@
+<div class="data-table-container">
+  <!-- Global Filter -->
+  @if (enableFiltering()) {
+    <div class="table-filter">
+      <input
+        type="text"
+        placeholder="Buscar..."
+        (input)="onFilterChange($event)"
+        class="filter-input"
+      />
+    </div>
+  }
+
+  <!-- Table -->
+  <div class="table-wrapper">
+    <table class="data-table">
+      <thead>
+        @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
+          <tr>
+            @for (header of headerGroup.headers; track header.id) {
+              <th
+                [class.sortable]="header.column.getCanSort()"
+                (click)="toggleSorting(header.column)"
+              >
+                @if (!header.isPlaceholder) {
+                  <div class="header-content">
+                    <ng-container
+                      *flexRender="
+                        header.column.columnDef.header;
+                        props: header.getContext();
+                        let headerText
+                      "
+                    >
+                      {{ headerText }}
+                    </ng-container>
+                    @if (enableSorting() && header.column.getCanSort()) {
+                      <span class="sort-icon">{{ getSortIcon(header.column) }}</span>
+                    }
+                  </div>
+                }
+              </th>
+            }
+          </tr>
+        }
+      </thead>
+      <tbody>
+        @for (row of table.getRowModel().rows; track row.id) {
+          <tr>
+            @for (cell of row.getVisibleCells(); track cell.id) {
+              <td>
+                <ng-container
+                  *flexRender="
+                    cell.column.columnDef.cell;
+                    props: cell.getContext();
+                    let cellValue
+                  "
+                >
+                  {{ cellValue }}
+                </ng-container>
+              </td>
+            }
+          </tr>
+        } @empty {
+          <tr>
+            <td [attr.colspan]="columns().length" class="empty-message">
+              Nenhum dado encontrado
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  @if (enablePagination()) {
+    <div class="pagination">
+      <div class="pagination-info">
+        Mostrando {{ table.getState().pagination.pageIndex * table.getState().pagination.pageSize + 1 }}
+        - {{ Math.min((table.getState().pagination.pageIndex + 1) * table.getState().pagination.pageSize, table.getFilteredRowModel().rows.length) }}
+        de {{ table.getFilteredRowModel().rows.length }} registros
+      </div>
+      <div class="pagination-controls">
+        <button
+          (click)="goToFirstPage()"
+          [disabled]="!table.getCanPreviousPage()"
+          class="pagination-btn"
+        >
+          ««
+        </button>
+        <button
+          (click)="goToPreviousPage()"
+          [disabled]="!table.getCanPreviousPage()"
+          class="pagination-btn"
+        >
+          «
+        </button>
+        <span class="page-indicator">
+          Página {{ table.getState().pagination.pageIndex + 1 }} de {{ table.getPageCount() }}
+        </span>
+        <button
+          (click)="goToNextPage()"
+          [disabled]="!table.getCanNextPage()"
+          class="pagination-btn"
+        >
+          »
+        </button>
+        <button
+          (click)="goToLastPage()"
+          [disabled]="!table.getCanNextPage()"
+          class="pagination-btn"
+        >
+          »»
+        </button>
+      </div>
+    </div>
+  }
+</div>
