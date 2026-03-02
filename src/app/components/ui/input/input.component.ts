@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { NgpInput } from "ng-primitives/input";
 
 @Component({
-  selector: "app-input-tailwind",
+  selector: "app-input",
   imports: [NgpInput],
   template: `
     <input

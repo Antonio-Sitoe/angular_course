@@ -1,10 +1,23 @@
-import { Component } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { TableComponent } from "./components/table-component/table-component";
+import { Component, ViewChild } from "@angular/core";
+import { FormsModule, NgModel } from "@angular/forms";
+import { AfterViewInit } from "@angular/core";
 
 @Component({
   selector: "app-root",
-  imports: [FormsModule, TableComponent],
+  imports: [FormsModule],
   templateUrl: "./app.html",
 })
-export class App {}
+export class App implements AfterViewInit {
+  @ViewChild("meuInputFormControl") nameInput!: NgModel;
+
+  name = "Angular";
+
+  onChange(value: any) {
+    console.log("Name changed:", value);
+    this.name = value;
+  }
+
+  ngAfterViewInit() {
+    console.log("Input element reference:", this.nameInput);
+  }
+}
