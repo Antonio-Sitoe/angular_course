@@ -1,11 +1,11 @@
 import { Component, ViewChild } from "@angular/core";
 import { FormsModule, NgModel } from "@angular/forms";
 import { AfterViewInit } from "@angular/core";
-import { TexteareaComponent } from "./components/ui/textearea/textearea";
+import { Form } from "./components/form/form";
 
 @Component({
   selector: "app-root",
-  imports: [FormsModule, TexteareaComponent],
+  imports: [FormsModule, Form],
   templateUrl: "./app.html",
 })
 export class App implements AfterViewInit {

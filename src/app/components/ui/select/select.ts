@@ -1,29 +1,10 @@
 /** This example uses ng-primitives styles, which are imported from ng-primitives/example-theme/index.css in the global styles file **/
 import { Component, signal } from "@angular/core";
-import {
-  NgpDescription,
-  NgpFormField,
-  NgpLabel,
-} from "ng-primitives/form-field";
-import {
-  NgpSelect,
-  NgpSelectDropdown,
-  NgpSelectOption,
-  NgpSelectPortal,
-} from "ng-primitives/select";
 
 @Component({
   selector: "app-select-form-field-tailwind",
   standalone: true,
-  imports: [
-    NgpSelect,
-    NgpSelectDropdown,
-    NgpSelectOption,
-    NgpSelectPortal,
-    NgpFormField,
-    NgpLabel,
-    NgpDescription,
-  ],
+  imports: [],
   providers: [],
   template: "./select.html",
   styles: `
