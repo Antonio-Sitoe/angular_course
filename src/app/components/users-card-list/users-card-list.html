@@ -1,0 +1,13 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+  @for (user of users; track user.id) {
+    <div class="shadow-md rounded-lg bg-white p-4 cursor-pointer" (click)="onUserSelected(user.id)">
+      <h2>Usuários {{ user.id }}</h2>
+      <div class="user-card">
+        <div class="user-info">
+          <h3>{{ user.name }}</h3>
+          <p>{{ user.email }}</p>
+        </div>
+      </div>
+    </div>
+  }
+</div>
