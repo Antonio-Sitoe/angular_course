@@ -4,6 +4,6 @@
   </div>
   <div class="w-full grid container">
     <app-users-card-list [users]="usersList" (onUserSelectedEmmiter)="onUserSelected($event)" />
-    <app-user-form [genderList]="genres()" [stateList]="states()" [userSelected]="userSelected()" />
+    <app-user-form [genderList]="genres()" [stateList]="states()" [userSelected]="selectedUser" />
   </div>
 </div>

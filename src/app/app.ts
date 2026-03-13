@@ -62,4 +62,13 @@ export class App implements OnInit {
   get usersList() {
     return this.users();
   }
+
+  get selectedUser(): IUserForm {
+    const user = this.userSelected();
+    if (user) {
+      return user;
+    } else {
+      return {} as IUserForm;
+    }
+  }
 }
