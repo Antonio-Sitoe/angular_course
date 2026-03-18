@@ -5,6 +5,7 @@ import {
   numberAttribute,
   ChangeDetectionStrategy,
 } from "@angular/core";
+
 import {
   NgpProgress,
   NgpProgressIndicator,
@@ -31,10 +32,12 @@ import {
   imports: [NgpProgressIndicator, NgpProgressTrack, NgpProgressValue],
 
   template: `
-    <span ngpProgressValue>{{ value() }}%</span>
-
     <div ngpProgressTrack>
-      <div ngpProgressIndicator></div>
+      <div
+        ngpProgressIndicator
+        class="h-full bg-green-500 rounded-lg transition-all duration-150"
+        style="width: 100%;"
+      ></div>
     </div>
   `,
 
@@ -43,10 +46,10 @@ import {
       :host {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-row-gap: 0.5rem;
+        gap: 0.5rem;
         width: 200px;
-        box-sizing: border-box;
         padding: 0.5rem;
+        box-sizing: border-box;
       }
 
       [ngpProgressValue] {
@@ -54,7 +57,7 @@ import {
         font-size: 14px;
         font-weight: 500;
         text-align: end;
-        grid-column-start: 2;
+        grid-column: 2;
       }
 
       [ngpProgressTrack] {
@@ -62,19 +65,10 @@ import {
         position: relative;
         height: 12px;
         width: 100%;
-        max-width: 320px;
-        overflow: hidden;
         border-radius: 0.5rem;
-        border: 1px solid var(--ngp-border);
+        border: 1px solid oklch(51.8% 0.253 323.949);
         background-color: var(--ngp-background);
-      }
-
-      [ngpProgressIndicator] {
-        height: 100%;
-        width: var(--ngp-progress-percent);
-        border-radius: 0.5rem;
-        background-color: var(--ngp-background-inverse);
-        transition: width 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
       }
     `,
   ],
@@ -83,4 +77,10 @@ export class ProgressComponent {
   readonly value = input<number, NumberInput>(0, {
     transform: numberAttribute,
   });
+
+  readonly max = input<number, NumberInput>(100, {
+    transform: numberAttribute,
+  });
+
+  readonly valueLabel = input<string>("", {});
 }
