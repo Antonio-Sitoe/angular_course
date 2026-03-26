@@ -10,7 +10,6 @@ import {
   NgpProgress,
   NgpProgressIndicator,
   NgpProgressTrack,
-  NgpProgressValue,
 } from "ng-primitives/progress";
 
 @Component({
@@ -29,7 +28,7 @@ import {
     },
   ],
 
-  imports: [NgpProgressIndicator, NgpProgressTrack, NgpProgressValue],
+  imports: [NgpProgressIndicator, NgpProgressTrack],
 
   template: `
     <div ngpProgressTrack>

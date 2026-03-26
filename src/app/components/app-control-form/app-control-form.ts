@@ -7,10 +7,8 @@ import { FormControl, Validators } from "@angular/forms";
   templateUrl: "./app-control-form.html",
   styleUrl: "./app-control-form.css",
 })
-export class AppControlForm implements OnInit {
-  nome = new FormControl("", Validators.required);
-
-  ngOnInit(): void {}
+export class AppControlForm {
+  nome = new FormControl("", [Validators.required, Validators.minLength(6)]);
 
   alterarValor() {
     this.nome.setValue("Novo valor");
