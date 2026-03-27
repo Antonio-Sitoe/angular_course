@@ -1,6 +1,13 @@
-<div class="grid gap-2">
-  <label for="nome" class="form-label">Nome</label>
-  <input type="text" id="nome" class="form-control" />
-</div>
-
-<button type="submit" (click)="alterarValor()">Enviar</button>
+<section class="border rounded p-4">
+  <div class="grid gap-2 mb-3">
+    <label for="nome" class="form-label font-bold">Nome</label>
+    <input type="text" id="nome" class="form-control border-2 p-2 rounded font-semibold" />
+  </div>
+  <button
+    type="submit"
+    (click)="alterarValor()"
+    class="text-center p-2 w-full border-2 border-gray-950 rounded cursor-pointer bg-blue-500 text-white hover:bg-blue-600 transition-colors"
+  >
+    Enviar
+  </button>
+</section>
