@@ -1,9 +1,9 @@
 import { Component } from "@angular/core";
-import { AppControlForm } from "./components/app-control-form/app-control-form";
+import { FormArrayComponent } from "./components/form-array/form-array";
 
 @Component({
   selector: "app-root",
-  imports: [AppControlForm],
+  imports: [FormArrayComponent],
   templateUrl: "./app.html",
 })
 export class App {}
