@@ -1,4 +1,4 @@
-import { IBaseResponse } from "./base.response.interface";
+import { IBaseResponse } from './base.response.interface';
 
 export interface CityProps {
   state: string;

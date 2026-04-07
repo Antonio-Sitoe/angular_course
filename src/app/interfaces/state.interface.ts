@@ -1,4 +1,4 @@
-import { IBaseResponse } from "./base.response.interface";
+import { IBaseResponse } from './country/base.response.interface';
 
 export interface IStateProps {
   id: number;
@@ -22,5 +22,4 @@ export interface ICountryStateData {
 
 export type ICountryStateListResponse = IStateData[];
 
-export interface ICountryStateResponse
-  extends IBaseResponse<ICountryStateData> {}
+export interface ICountryStateResponse extends IBaseResponse<ICountryStateData> {}

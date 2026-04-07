@@ -1,54 +1,16 @@
-<div class="users-list">
-  <div class="overflow-x-auto">
-    <table class="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-lg">
-      <thead class="bg-gray-50">
-        <tr>
-          <th
-            scope="col"
-            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >
-            Nome
-          </th>
-          <th
-            scope="col"
-            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >
-            Data de Cadastro
-          </th>
-          <th
-            scope="col"
-            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-          >
-            Status
-          </th>
-        </tr>
-      </thead>
-      <tbody class="bg-white divide-y divide-gray-200">
-        @for (user of usersList; track user.email) {
-        <tr
-          class="hover:bg-gray-50 cursor-pointer transition-colors"
-          (click)="onUserSelected(user)"
-        >
-          <td (click)="onUserSelected(user)" class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-            {{ user.nome || '-' }}
-          </td>
-          <td (click)="onUserSelected(user)" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            {{ formatDate(user.dataCadastro) }}
-          </td>
-          <td (click)="onUserSelected(user)" class="px-6 py-4 whitespace-nowrap text-sm">
-            <span
-              class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full"
-              [ngClass]="{
-                'bg-green-100 text-green-800': user.ativo,
-                'bg-red-100 text-red-800': !user.ativo
-              }"
-            >
-              {{ formatStatus(user.ativo) }}
-            </span>
-          </td>
-        </tr>
-        }
-      </tbody>
-    </table>
-  </div>
+<div class="p-4 grid sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  @for (user of usersList; track user.name) {
+    <mat-card>
+      <mat-card-content>
+        <div class="p-4 bg-orange-400">
+          <mat-card-title>
+            <h2>Usuários {{ user.name }}</h2>
+          </mat-card-title>
+          <mat-card-subtitle>
+            <p>{{ user.email }}</p>
+          </mat-card-subtitle>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  }
 </div>

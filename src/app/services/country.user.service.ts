@@ -1,8 +1,9 @@
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { usersListMockedCountryList } from './lista-de-usuarios';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class CountryUserService {
   getUsers(): Observable<any[]> {

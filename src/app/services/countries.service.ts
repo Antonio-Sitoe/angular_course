@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { ICountryListResponse, ICountryResponse } from '../interfaces/countries.interface';
+import { ICountryListResponse, ICountryResponse } from '../interfaces/country/countries.interface';
 
 @Injectable({
   providedIn: 'root',
