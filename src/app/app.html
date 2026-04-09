@@ -6,7 +6,17 @@
           <div class="p-4 bg-orange-400">
             <app-users-list [usersList]="usersList()" />
           </div>
-          <div class="p-4 bg-green-400">TABS</div>
+          <div class="p-4 bg-green-400">
+            <mat-tab-group [selectedIndex]="currentTab">
+              <mat-tab label="Dados Gerais" (selectedChange)="currentTab = 0">
+                <app-general-informations [user]="usersList()[1]" />
+              </mat-tab>
+              <mat-tab label="Contato" (selectedChange)="currentTab = 1">
+                <app-country-contact-information [user]="usersList()[1]" />
+              </mat-tab>
+              <mat-tab label="Dependentes" (selectedChange)="currentTab = 2"> Content 3 </mat-tab>
+            </mat-tab-group>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>

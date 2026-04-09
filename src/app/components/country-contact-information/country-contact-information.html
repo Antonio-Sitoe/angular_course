@@ -1,0 +1,12 @@
+<section class="p-4">
+  <h4 class="text-lg font-semibold">Telefones</h4>
+  <app-country-phone-list [userPhoneList]="user.phoneList" />
+  <h4 class="text-lg font-semibold">Endereço</h4>
+  <div class="p-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+    <app-user-info-item label="Tipo" value="12345-678" />
+    <app-user-info-item label="Rua" value="Rua das Flores, 123" />
+    <app-user-info-item label="Complemento" value="São Paulo" />
+    <app-user-info-item label="Pais" value="SP" />
+    <app-user-info-item label="Cidade" value="Brasil" />
+  </div>
+</section>

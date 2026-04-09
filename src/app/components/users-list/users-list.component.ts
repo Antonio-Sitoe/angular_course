@@ -13,7 +13,7 @@ import { ICountryUserInterface } from '../../interfaces/country/country.user.int
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
-  imports: [CommonModule, MatCard, MatCardTitle, MatCardContent, MatCardSubtitle, MatCardActions],
+  imports: [CommonModule, MatCard, MatCardTitle, MatCardContent, MatCardSubtitle],
 })
 export class UsersListComponent {
   @Input({ required: true }) usersList: ICountryUserInterface[] = [];
