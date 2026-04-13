@@ -12,7 +12,7 @@ export interface ICountryUserInterface {
   monthlyIncome: number;
   birthDate: string;
   phoneList: ICountryPhone[];
-  addressList: ICountryAddressList[];
+  addressList: ICountryAddressList;
   dependentsList: ICountryDependent[];
 }
 

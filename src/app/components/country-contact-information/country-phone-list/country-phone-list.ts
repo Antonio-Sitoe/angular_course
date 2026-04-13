@@ -17,17 +17,15 @@ export interface IPhoneListToDisplay {
 })
 export class CountryPhoneList implements OnChanges {
   phoneListToDisplay: IPhoneListToDisplay[] = [];
-  @Input({ required: true }) userPhoneList: ICountryPhoneList | undefined = [];
+  @Input({ required: true }) userPhoneList: ICountryPhoneList = [];
 
   preparePhoneList(): void {
-    console.log('preparePhoneList');
-
-    this.userPhoneList = [];
+    this.phoneListToDisplay = [];
 
     Object.keys(PHONE_TYPE_DESCRIPTION_MAP)
       .map(Number)
       .forEach((key) => {
-        const phoneFound = this.userPhoneList?.find((phone) => phone.type === key);
+        const phoneFound = this.userPhoneList.find((phone) => phone.type === key);
         if (phoneFound) {
           this.phoneListToDisplay.push({
             type: PHONE_TYPE_DESCRIPTION_MAP[phoneFound.type as PhoneTypeEnum],
@@ -38,10 +36,11 @@ export class CountryPhoneList implements OnChanges {
   }
 
   ngOnChanges(): void {
-    console.log(this.userPhoneList);
-    const phoneLoaded = Array.isArray(this.userPhoneList) && this.userPhoneList?.length > 0;
+    const phoneLoaded = Array.isArray(this.userPhoneList) && this.userPhoneList.length > 0;
     if (phoneLoaded) {
       this.preparePhoneList();
+    } else {
+      this.phoneListToDisplay = [];
     }
   }
 }

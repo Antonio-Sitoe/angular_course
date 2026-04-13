@@ -16,6 +16,7 @@ import { UsersService } from './services/users.service';
 import { GeneralComponent } from './components/general-component/general-component';
 import { GeneralInformationsComponent } from './components/general-informations/general-informations.component';
 import { CountryContactInformation } from './components/country-contact-information/country-contact-information';
+import { CountryDependessesList } from './components/country-dependesses-list/country-dependesses-list';
 
 @Component({
   selector: 'app-root',
@@ -26,12 +27,14 @@ import { CountryContactInformation } from './components/country-contact-informat
     MatTabsModule,
     GeneralInformationsComponent,
     CountryContactInformation,
+    CountryDependessesList,
   ],
   templateUrl: './app.html',
 })
 export class App implements OnInit {
   currentTab = 1;
   readonly usersList = signal<ICountryUserListResponse>([]);
+  readonly selectedUser = signal<ICountryUserInterface | null>(null);
   constructor(
     private readonly _countryService: CountryService,
     private readonly _statesService: StatesService,
@@ -39,55 +42,22 @@ export class App implements OnInit {
     private readonly _usersService: UsersService,
   ) {}
 
-  ngOnInit() {
-    this._countryService.getCountries().subscribe({
-      next: (countries: any) => {
-        console.log(countries);
-      },
-      error: (error: any) => {
-        console.error(error);
-      },
-      complete: () => {
-        console.log('Complete');
-      },
-    });
-    this._statesService.getStates('Brazil').subscribe({
-      next: (states: any) => {
-        console.log(states);
-      },
-      error: (error: any) => {
-        console.error(error);
-      },
-      complete: () => {
-        console.log('Complete');
-      },
-    });
+  onUserSelected(user: ICountryUserInterface) {
+    this.selectedUser.set(user);
+  }
 
-    this._cityService.getCities({ country: 'Brazil', state: 'São Paulo' }).subscribe({
-      next: (cities: any) => {
-        console.log(cities);
-      },
-      error: (error: any) => {
-        console.error(error);
-      },
-      complete: () => {
-        console.log('Complete');
-      },
-    });
+  ngOnInit() {
+    this._countryService.getCountries().subscribe();
+    this._statesService.getStates('Brazil').subscribe();
+    this._cityService.getCities({ country: 'Brazil', state: 'São Paulo' }).subscribe();
 
     this._usersService
       .getUsers()
       .pipe(take(1))
       .subscribe({
         next: (users: any) => {
-          console.log(users);
           this.usersList.set(users);
-        },
-        error: (error: any) => {
-          console.error(error);
-        },
-        complete: () => {
-          console.log('Complete');
+          this.selectedUser.set(users?.[0] ?? null);
         },
       });
   }

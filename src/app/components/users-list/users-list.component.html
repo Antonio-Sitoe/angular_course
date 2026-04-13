@@ -1,8 +1,8 @@
 <div class="p-4 grid sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4">
   @for (user of usersList; track user.name) {
-    <mat-card>
+    <mat-card class="cursor-pointer" (click)="onUserSelected(user)">
       <mat-card-content>
-        <div class="p-4 bg-orange-400">
+        <div class="p-4" [class.bg-orange-400]="isUserSelected(user)">
           <mat-card-title>
             <h2>Usuários {{ user.name }}</h2>
           </mat-card-title>

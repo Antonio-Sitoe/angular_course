@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IUser } from '../../interfaces/user/user.interface';
 import {
   MatCard,
   MatCardContent,
@@ -17,11 +16,16 @@ import { ICountryUserInterface } from '../../interfaces/country/country.user.int
 })
 export class UsersListComponent {
   @Input({ required: true }) usersList: ICountryUserInterface[] = [];
+  @Input() selectedUser: ICountryUserInterface | null = null;
 
-  @Output('userSelected') userSelectedEmitt = new EventEmitter<IUser>();
+  @Output('userSelected') userSelectedEmitt = new EventEmitter<ICountryUserInterface>();
 
-  onUserSelected(user: IUser) {
+  onUserSelected(user: ICountryUserInterface) {
     this.userSelectedEmitt.emit(user);
+  }
+
+  isUserSelected(user: ICountryUserInterface): boolean {
+    return this.selectedUser?.email === user.email;
   }
 
   formatDate(dateString: string): string {

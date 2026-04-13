@@ -1,0 +1,16 @@
+<div>
+  <h2 class="text-2xl font-bold">Dependentes</h2>
+  @if (safeDependentsList.length === 0) {
+    <div>
+      <p>O usuario nao possui nenhum dependente</p>
+    </div>
+  } @else {
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      @for (dependent of safeDependentsList; track dependent.document) {
+        <app-user-info-item label="Nome" [value]="dependent.name" />
+        <app-user-info-item label="Idade" [value]="dependent.age.toString()" />
+        <app-user-info-item label="Documento" [value]="dependent.document.toString()" />
+      }
+    </div>
+  }
+</div>

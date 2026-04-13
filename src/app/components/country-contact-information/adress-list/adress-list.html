@@ -1,0 +1,9 @@
+<div class="p-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+  @for (address of adressToDisplay; track address.type) {
+    <app-user-info-item label="Tipo" [value]="address.type" />
+    <app-user-info-item label="Rua" [value]="address.street" />
+    <app-user-info-item label="Complemento" [value]="address.complement" />
+    <app-user-info-item label="Pais" [value]="address.country" />
+    <app-user-info-item label="Cidade" [value]="address.city" />
+  }
+</div>
