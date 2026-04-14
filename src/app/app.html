@@ -10,19 +10,19 @@
               (userSelected)="onUserSelected($event)"
             />
           </div>
+          <app-buttons-container
+            [isInEditMode]="isInEditMode"
+            (editButton)="onEditButton()"
+            (cancelButton)="onCancelButton()"
+            (saveButton)="onSaveButton()"
+          />
           <div class="p-4">
             @if (selectedUser(); as user) {
-              <mat-tab-group [selectedIndex]="currentTab">
-                <mat-tab label="Dados Gerais" (selectedChange)="currentTab = 0">
-                  <app-general-informations [user]="user" />
-                </mat-tab>
-                <mat-tab label="Contato" (selectedChange)="currentTab = 1">
-                  <app-country-contact-information [user]="user" />
-                </mat-tab>
-                <mat-tab label="Dependentes" (selectedChange)="currentTab = 2">
-                  <app-country-dependesses-list [dependentsList]="user.dependentsList" />
-                </mat-tab>
-              </mat-tab-group>
+              <app-user-information-container
+                [user]="user"
+                [currentTab]="currentTab"
+                [isInEditMode]="isInEditMode"
+              />
             } @else {
               <p class="text-sm text-gray-700">Carregando dados do usuário...</p>
             }
