@@ -65,8 +65,13 @@ export class App implements OnInit {
 
   onSaveButton() {
     console.log("Save button clicked");
+    this.isInEditMode = false;
   }
-  onEditButton() {}
+  onEditButton() {
+    this.isInEditMode = true;
+  }
 
-  onCancelButton() {}
+  onCancelButton() {
+    this.isInEditMode = false;
+  }
 }

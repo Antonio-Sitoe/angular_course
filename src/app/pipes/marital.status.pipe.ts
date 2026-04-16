@@ -1,14 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { MaritalStatusEnum } from '../enums/marital-status.enum';
+import { Pipe, PipeTransform } from "@angular/core";
+import { MARITAL_STATUS_DESCRIPTION_MAP } from "../utils/marital-status-description-map";
 
-@Pipe({ name: 'maritalStatus' })
+@Pipe({ name: "maritalStatus" })
 export class MaritalStatusPipe implements PipeTransform {
   transform(value: number): string {
-    const maritalStatusMap: { [key: number]: string } = {
-      [MaritalStatusEnum.SINGLE]: 'Solteiro',
-      [MaritalStatusEnum.MARRIED]: 'Casado',
-      [MaritalStatusEnum.DIVORCED]: 'Divorciado',
-    };
-    return maritalStatusMap[value] || 'Desconhecido';
+    return MARITAL_STATUS_DESCRIPTION_MAP[value] || "Desconhecido";
   }
 }
