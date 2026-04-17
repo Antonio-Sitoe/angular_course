@@ -36,6 +36,7 @@
     "@tanstack/table-core": "^8.21.3",
     "date-fns": "^4.1.0",
     "ng-primitives": "^0.109.5",
+    "ngx-mask": "^21.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zxcvbn": "^4.4.2"

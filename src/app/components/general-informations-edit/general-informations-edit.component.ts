@@ -17,10 +17,12 @@ import {
 import { ICountry } from "../../interfaces/country/countries.interface";
 import { ICountryStateListResponse } from "../../interfaces/state.interface";
 import { MARITAL_STATUS_OPTIONS } from "../../utils/marital-status-description-map";
+import { NgxMaskDirective, provideNgxMask } from "ngx-mask";
 
 @Component({
   selector: "app-general-informations-edit",
   templateUrl: "./general-informations-edit.component.html",
+  providers: [provideNgxMask()],
   imports: [
     MatInputModule,
     MatRadioModule,
@@ -29,6 +31,7 @@ import { MARITAL_STATUS_OPTIONS } from "../../utils/marital-status-description-m
     ReactiveFormsModule,
     MatAutocompleteModule,
     ɵInternalFormsSharedModule,
+    NgxMaskDirective,
   ],
 })
 export class GeneralInformationsEditComponent implements OnInit {

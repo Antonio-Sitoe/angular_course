@@ -6,6 +6,7 @@ import {
   ICountryPhoneList,
   ICountryUserInterface,
 } from "../../interfaces/country/country.user.interface";
+import { convertPtBrDateToDateObj } from "../../utils/convert-pt-br-date-to-date-obj";
 
 export class UserFormController {
   userForm!: FormGroup;
@@ -102,7 +103,11 @@ export class UserFormController {
   }
 
   private fulfillGeneralInformations(user: ICountryUserInterface) {
-    this.generalInformations.patchValue(user);
+    const newUser = {
+      ...user,
+      birthDate: convertPtBrDateToDateObj(user.birthDate),
+    };
+    this.generalInformations.patchValue(newUser);
   }
 
   private createUserForm() {

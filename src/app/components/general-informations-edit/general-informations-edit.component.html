@@ -64,7 +64,14 @@
       </div>
       <mat-form-field class="w-full">
         <mat-label>Renda Mensal:</mat-label>
-        <input matInput placeholder="R$5000,00" formControlName="monthlyIncome" />
+        <input
+          matInput
+          placeholder="R$5000,00"
+          formControlName="monthlyIncome"
+          mask="separator.2"
+          [thousandSeparator]="','"
+          [decimalMarker]="'.'"
+        />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Data de Nascimento:</mat-label>
