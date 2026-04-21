@@ -13,14 +13,14 @@
   </mat-tab>
   <mat-tab label="Contato" (selectedChange)="currentTab = 1">
     @if (isInEditMode) {
-      <app-contact-informations-edit />
+      <app-contact-informations-edit [userForm]="userForm" />
     } @else {
       <app-country-contact-information [user]="user" />
     }
   </mat-tab>
   <mat-tab label="Dependentes" (selectedChange)="currentTab = 2">
     @if (isInEditMode) {
-      <app-dependents-list-edit />
+      <app-dependents-list-edit [userForm]="userForm" />
     } @else {
       <app-country-dependesses-list [dependentsList]="user.dependentsList" />
     }

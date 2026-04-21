@@ -1,0 +1,37 @@
+<div class="flex h-screen flex-col items-center p-4 gap-4">
+  <div class="w-full grid container">
+    <div class="p-4 max-w-7xl mx-auto">
+      <mat-card>
+        <mat-card-content>
+          <div class="p-4">
+            <app-users-list
+              [usersList]="usersList()"
+              [selectedUser]="selectedUser()"
+              (userSelected)="onUserSelected($event)"
+            />
+          </div>
+
+          @if (selectedUser(); as user) {
+            <app-buttons-container
+              [isInEditMode]="isInEditMode"
+              (editButton)="onEditButton()"
+              (cancelButton)="onCancelButton()"
+              (saveButton)="onSaveButton()"
+            />
+            <div class="p-4">
+              <app-user-information-container
+                [user]="user"
+                [currentTab]="currentTab"
+                [isInEditMode]="isInEditMode"
+              />
+            </div>
+          } @else {
+            <div class="p-4">
+              <p class="text-sm text-gray-700">Carregando dados do usuário...</p>
+            </div>
+          }
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

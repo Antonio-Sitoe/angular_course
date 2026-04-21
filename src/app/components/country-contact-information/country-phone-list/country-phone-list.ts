@@ -1,19 +1,19 @@
-import { Component, Input, OnChanges } from '@angular/core';
-import { ICountryPhoneList } from '../../../interfaces/country/country.user.interface';
-import { UserInfoItem } from '../../user-info-item/user-info-item';
-import { PhoneTypeEnum } from '../../../enums/phone-type.enum';
-import { PHONE_TYPE_DESCRIPTION_MAP } from '../../../utils/phone-type-description-map';
+import { UserInfoItem } from "../../user-info-item/user-info-item";
+import { ICountryPhoneList } from "../../../interfaces/country/country.user.interface";
+import { preparePhoneListHelper } from "../../../utils/prepare-phone-list";
+import { Component, Input, OnChanges } from "@angular/core";
 
 export interface IPhoneListToDisplay {
-  type: string;
+  type: number;
+  typeDescription: string;
   phoneNumber: string;
 }
 
 @Component({
-  selector: 'app-country-phone-list',
+  selector: "app-country-phone-list",
   imports: [UserInfoItem],
-  templateUrl: './country-phone-list.html',
-  styleUrl: './country-phone-list.css',
+  templateUrl: "./country-phone-list.html",
+  styleUrl: "./country-phone-list.css",
 })
 export class CountryPhoneList implements OnChanges {
   phoneListToDisplay: IPhoneListToDisplay[] = [];
@@ -21,22 +21,21 @@ export class CountryPhoneList implements OnChanges {
 
   preparePhoneList(): void {
     this.phoneListToDisplay = [];
-
-    Object.keys(PHONE_TYPE_DESCRIPTION_MAP)
-      .map(Number)
-      .forEach((key) => {
-        const phoneFound = this.userPhoneList.find((phone) => phone.type === key);
-        if (phoneFound) {
-          this.phoneListToDisplay.push({
-            type: PHONE_TYPE_DESCRIPTION_MAP[phoneFound.type as PhoneTypeEnum],
-            phoneNumber: phoneFound.number,
-          });
-        }
-      });
+    const originalPhoneList =
+      this.userPhoneList && this.userPhoneList.length > 0
+        ? this.userPhoneList
+        : [];
+    preparePhoneListHelper(
+      originalPhoneList,
+      (phoneListToDisplay: IPhoneListToDisplay) => {
+        this.phoneListToDisplay.push(phoneListToDisplay);
+      }
+    );
   }
 
   ngOnChanges(): void {
-    const phoneLoaded = Array.isArray(this.userPhoneList) && this.userPhoneList.length > 0;
+    const phoneLoaded =
+      Array.isArray(this.userPhoneList) && this.userPhoneList.length > 0;
     if (phoneLoaded) {
       this.preparePhoneList();
     } else {
