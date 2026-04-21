@@ -1,5 +1,5 @@
-import { Component, computed, input, Signal, Type } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, computed, input, Signal, Type } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import {
   createAngularTable,
   FlexRenderDirective,
@@ -10,14 +10,14 @@ import {
   getFilteredRowModel,
   SortingState,
   PaginationState,
-} from '@tanstack/angular-table';
+} from "@tanstack/angular-table";
 
 @Component({
-  selector: 'app-data-table',
+  selector: "app-data-table",
   standalone: true,
   imports: [CommonModule, FlexRenderDirective],
-  templateUrl: './data-table.html',
-  styleUrl: './data-table.css',
+  templateUrl: "./data-table.html",
+  styleUrl: "./data-table.css",
 })
 export class DataTableComponent<T> {
   // Make Math available in template
@@ -33,7 +33,7 @@ export class DataTableComponent<T> {
 
   // State signals
   sorting: Signal<SortingState> = computed(() => []);
-  globalFilter = '';
+  globalFilter = "";
 
   // Create table instance
   table = createAngularTable(() => ({
@@ -41,8 +41,12 @@ export class DataTableComponent<T> {
     columns: this.columns(),
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: this.enableSorting() ? getSortedRowModel() : undefined,
-    getPaginationRowModel: this.enablePagination() ? getPaginationRowModel() : undefined,
-    getFilteredRowModel: this.enableFiltering() ? getFilteredRowModel() : undefined,
+    getPaginationRowModel: this.enablePagination()
+      ? getPaginationRowModel()
+      : undefined,
+    getFilteredRowModel: this.enableFiltering()
+      ? getFilteredRowModel()
+      : undefined,
     initialState: {
       pagination: {
         pageSize: this.pageSize(),
@@ -83,8 +87,8 @@ export class DataTableComponent<T> {
   // Get sort icon
   getSortIcon(column: any): string {
     const sorted = column.getIsSorted();
-    if (sorted === 'asc') return '↑';
-    if (sorted === 'desc') return '↓';
-    return '↕';
+    if (sorted === "asc") return "↑";
+    if (sorted === "desc") return "↓";
+    return "↕";
   }
 }
