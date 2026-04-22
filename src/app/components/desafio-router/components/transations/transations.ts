@@ -1,9 +1,9 @@
 import { Component } from "@angular/core";
-import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
+import { RouterOutlet } from "@angular/router";
 
 @Component({
   selector: "app-transations",
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet],
   templateUrl: "./transations.html",
   styleUrl: "./transations.css",
 })
