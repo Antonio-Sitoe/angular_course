@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card">
+    <div class="card__side-menu">
+      <div
+        class="menu__item"
+        routerLink="/"
+        routerLinkActive="menu__item--selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Início
+      </div>
+      <div class="menu__item" routerLink="/general" routerLinkActive="menu__item--selected">
+        Geral
+      </div>
+      <div class="menu__item" routerLink="/transactions" routerLinkActive="menu__item--selected">
+        Transações
+      </div>
+    </div>
+    <div class="card__content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
