@@ -5,14 +5,30 @@ import {
   OnInit,
   signal,
 } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router, RouterLink } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { UsersServiceRouter } from "../../../../services/users.router.service";
 import { CardComponent } from "../../../../components/ui/card/card";
+import { Tabs } from "../../../ui/tabs/tabs";
+import { Tab } from "../../../ui/tabs/tab";
+import { Button } from "../../../card/button/button";
+import { UserTodos } from "../user-todos/user-todos";
+import { UserAlbunsComponent } from "../user-albuns/user-albuns";
+import { UserPost } from "../user-post/user-post";
 
 @Component({
   selector: "app-user-detail-component",
-  imports: [CommonModule, CardComponent],
+  imports: [
+    CommonModule,
+    CardComponent,
+    Tabs,
+    Tab,
+    Button,
+    RouterLink,
+    UserTodos,
+    UserAlbunsComponent,
+    UserPost,
+  ],
   templateUrl: "./user-detail-component.html",
   styleUrl: "./user-detail-component.css",
   changeDetection: ChangeDetectionStrategy.OnPush,

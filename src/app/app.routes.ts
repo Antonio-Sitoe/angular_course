@@ -3,6 +3,9 @@ import { NotFound } from "./components/desafio-router/components/not-found/not-f
 import { UserListComponent } from "./components/app-user-visualizer/components/user-list/user-list";
 import { UserAlbunsComponent } from "./components/app-user-visualizer/components/user-albuns/user-albuns";
 import { UserDetailComponent } from "./components/app-user-visualizer/components/user-detail-component/user-detail-component";
+import { UserTodos } from "./components/app-user-visualizer/components/user-todos/user-todos";
+import { PostDetails } from "./components/app-user-visualizer/components/post-details/post-details";
+import { UserPost } from "./components/app-user-visualizer/components/user-post/user-post";
 
 export const routes: Routes = [
   {
@@ -19,11 +22,30 @@ export const routes: Routes = [
     path: "users/:id",
     title: "Detalhes do Usuário",
     component: UserDetailComponent,
-  },
-  {
-    path: "albuns",
-    title: "Lista de Álbuns",
-    component: UserAlbunsComponent,
+    children: [
+      {
+        path: "todos",
+        title: "Todos do Usuário",
+        component: UserTodos,
+      },
+      {
+        path: "albuns",
+        title: "Álbuns do Usuário",
+        component: UserAlbunsComponent,
+      },
+      {
+        path: "posts",
+        title: "Posts do Usuário",
+        component: UserPost,
+        children: [
+          {
+            path: ":postId",
+            title: "Detalhe do Post",
+            component: PostDetails,
+          },
+        ],
+      },
+    ],
   },
   {
     path: "**",

@@ -1,1 +1,51 @@
-<p>user-todos works!</p>
+<div class="todos-container">
+  <div class="todos-header">
+    <h2>Minhas Tarefas</h2>
+    <p class="todos-count">{{ getCompletedCount() }} de {{ getTotalCount() }} concluídas</p>
+  </div>
+
+  @if (isLoading()) {
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>Carregando tarefas...</p>
+    </div>
+  } @else if (error()) {
+    <app-card title="Erro" description="Não foi possível carregar as tarefas">
+      <p class="error-message">{{ error() }}</p>
+    </app-card>
+  } @else if (getTotalCount() === 0) {
+    <div class="empty-state">
+      <div class="empty-icon">✓</div>
+      <p>Nenhuma tarefa encontrada</p>
+    </div>
+  } @else {
+    <div class="todos-list">
+      @for (todo of todos(); track todo.id) {
+        <div class="todo-item" [class.completed]="todo.completed">
+          <div class="todo-checkbox">
+            <input
+              type="checkbox"
+              [checked]="todo.completed"
+              (change)="toggleTodo(todo)"
+              class="checkbox-input"
+              [attr.aria-label]="'Marcar tarefa: ' + todo.title"
+            />
+            <span class="checkbox-custom"></span>
+          </div>
+
+          <div class="todo-content">
+            <p class="todo-title">{{ todo.title }}</p>
+          </div>
+
+          <div class="todo-status">
+            @if (todo.completed) {
+              <span class="badge badge-success">Concluída</span>
+            } @else {
+              <span class="badge badge-pending">Pendente</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

@@ -1,1 +1,35 @@
-<p>user-albuns works!</p>
+<div class="albuns-container">
+  <div class="albuns-header">
+    <h2>Meus Álbuns</h2>
+    <p class="albuns-count">{{ albuns().length }} álbum(ns)</p>
+  </div>
+
+  @if (isLoading()) {
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>Carregando álbuns...</p>
+    </div>
+  } @else if (error()) {
+    <div class="error-state">
+      <p class="error-message">{{ error() }}</p>
+    </div>
+  } @else if (albuns().length === 0) {
+    <div class="empty-state">
+      <div class="empty-icon">🎵</div>
+      <p>Nenhum álbum encontrado</p>
+    </div>
+  } @else {
+    <div class="albuns-grid">
+      @for (album of albuns(); track album.id) {
+        <div class="album-card">
+          <div class="album-icon">🎵</div>
+          <div class="album-content">
+            <h3 class="album-title">{{ album.title }}</h3>
+            <p class="album-id">#{{ album.id }}</p>
+          </div>
+          <div class="album-arrow">→</div>
+        </div>
+      }
+    </div>
+  }
+</div>
