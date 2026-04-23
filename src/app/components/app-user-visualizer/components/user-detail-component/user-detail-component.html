@@ -1,0 +1,67 @@
+<div class="user-detail-container">
+  @if (isLoading()) {
+    <div class="loading-state">
+      <p>Carregando dados...</p>
+    </div>
+  } @else if (error()) {
+    <app-card
+      title="Erro"
+      description="Não foi possível carregar os dados"
+      action="Voltar"
+      (actionClick)="goBack()"
+    >
+      <p class="error-message">{{ error() }}</p>
+    </app-card>
+  } @else if (user()) {
+    <app-card
+      [title]="user().name"
+      [description]="user().username"
+      action="Voltar"
+      (actionClick)="goBack()"
+    >
+      <div class="user-details-grid">
+        <div class="detail-item">
+          <label>Email</label>
+          <p>{{ user().email }}</p>
+        </div>
+
+        <div class="detail-item">
+          <label>Telefone</label>
+          <p>{{ user().phone }}</p>
+        </div>
+
+        <div class="detail-item">
+          <label>Website</label>
+          <p>{{ user().website }}</p>
+        </div>
+
+        <div class="detail-item">
+          <label>Empresa</label>
+          <p>{{ user().company?.name }}</p>
+        </div>
+
+        @if (user().address) {
+          <div class="detail-item">
+            <label>Rua</label>
+            <p>{{ user().address.street }}</p>
+          </div>
+
+          <div class="detail-item">
+            <label>Complemento</label>
+            <p>{{ user().address.suite }}</p>
+          </div>
+
+          <div class="detail-item">
+            <label>Cidade</label>
+            <p>{{ user().address.city }}</p>
+          </div>
+
+          <div class="detail-item">
+            <label>CEP</label>
+            <p>{{ user().address.zipcode }}</p>
+          </div>
+        }
+      </div>
+    </app-card>
+  }
+</div>

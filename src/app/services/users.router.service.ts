@@ -1,0 +1,13 @@
+import { HttpClient } from "@angular/common/http";
+import { inject, Injectable } from "@angular/core";
+
+@Injectable({
+  providedIn: "root",
+})
+export class UsersServiceRouter {
+  private readonly _http = inject(HttpClient);
+
+  getUsers() {
+    return this._http.get("https://jsonplaceholder.typicode.com/users");
+  }
+}

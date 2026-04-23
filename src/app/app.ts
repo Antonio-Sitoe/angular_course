@@ -1,9 +1,9 @@
 import { Component } from "@angular/core";
-import { AppDesafioComponent } from "./components/desafio-router/app-desafio";
+import { AppUserVisualizer } from "./components/app-user-visualizer/app.user.visualizer";
 
 @Component({
   selector: "app-root",
-  imports: [AppDesafioComponent],
+  imports: [AppUserVisualizer],
   templateUrl: "./app.html",
 })
 export class App {}

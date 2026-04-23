@@ -1,0 +1,13 @@
+<h3 class="text-lg font-bold font-mono">Lista de Usuários</h3>
+<div class="grid gap-4 mt-6">
+  @for (user of (userList$ | async) ?? []; track user.id) {
+    <app-card
+      title="{{ user.name }}"
+      description="{{ user.email }}"
+      (actionClick)="onUserActionClick(user.id)"
+      action="Acessar detalhes"
+    >
+      <p><span class="font-bold">Empresa: </span>{{ user.company.name }}</p>
+    </app-card>
+  }
+</div>
