@@ -1,6 +1,6 @@
-import {} from "@angular/core";
+import { inject } from "@angular/core";
 import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { RouterOutlet, Router } from "@angular/router";
 
 @Component({
   selector: "app-app-service-router",
@@ -8,4 +8,10 @@ import { RouterOutlet } from "@angular/router";
   styleUrl: "./app.service.router.css",
   imports: [RouterOutlet],
 })
-export class AppServiceRouterComponent {}
+export class AppServiceRouterComponent {
+  private readonly router = inject(Router);
+
+  navigateTo(route: string): void {
+    this.router.navigate([route]);
+  }
+}

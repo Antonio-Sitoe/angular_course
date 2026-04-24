@@ -8,7 +8,7 @@ import { Cards } from "./components/app-service-router/components/cards/cards";
 export const routes: Routes = [
   {
     path: "",
-    redirectTo: "users",
+    redirectTo: "initial",
     pathMatch: "full",
   },
   {
@@ -26,8 +26,6 @@ export const routes: Routes = [
 
   {
     path: "cards",
-    component: Cards,
-    pathMatch: "full",
     loadChildren: () =>
       import(
         "./components/app-service-router/components/cards/cards.routes"

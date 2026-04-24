@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.menu {
+  background-color: #333;
+  display: flex;
+}
+
+.menu__item {
+  margin: 0;
+  padding: 0;
+}
+
+.menu__item--selected .menu__link {
+  background-color: #4caf50;
+  color: white;
+}
+
+.menu__link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  cursor: pointer;
+}
+
+.menu__link:hover {
+  background-color: #575757;
+  color: #fff;
+}

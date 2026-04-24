@@ -7,16 +7,14 @@ export const cardsRoutes: Routes = [
   {
     path: "",
     component: Cards,
-    pathMatch: "full",
     children: [
       {
         path: "",
         redirectTo: "debit",
-        component: AppDebit,
+        pathMatch: "full",
       },
       {
-        path: "",
-        redirectTo: "debit",
+        path: "debit",
         component: AppDebit,
       },
       {
