@@ -1,11 +1,9 @@
 import { Routes } from "@angular/router";
 import { NotFound } from "./components/desafio-router/components/not-found/not-found";
-import { UserListComponent } from "./components/app-user-visualizer/components/user-list/user-list";
-import { UserAlbunsComponent } from "./components/app-user-visualizer/components/user-albuns/user-albuns";
-import { UserDetailComponent } from "./components/app-user-visualizer/components/user-detail-component/user-detail-component";
-import { UserTodos } from "./components/app-user-visualizer/components/user-todos/user-todos";
-import { PostDetails } from "./components/app-user-visualizer/components/post-details/post-details";
-import { UserPost } from "./components/app-user-visualizer/components/user-post/user-post";
+import { Initial } from "./components/app-service-router/components/initial/initial";
+import { Contacts } from "./components/app-service-router/components/contacts/contacts";
+import { AppServiceInformations } from "./components/app-service-router/components/app-service-informations/app-service-informations";
+import { Cards } from "./components/app-service-router/components/cards/cards";
 
 export const routes: Routes = [
   {
@@ -14,38 +12,26 @@ export const routes: Routes = [
     pathMatch: "full",
   },
   {
-    path: "users",
-    title: "Lista de Usuários",
-    component: UserListComponent,
+    path: "initial",
+    component: Initial,
   },
   {
-    path: "users/:id",
-    title: "Detalhes do Usuário",
-    component: UserDetailComponent,
-    children: [
-      {
-        path: "todos",
-        title: "Todos do Usuário",
-        component: UserTodos,
-      },
-      {
-        path: "albuns",
-        title: "Álbuns do Usuário",
-        component: UserAlbunsComponent,
-      },
-      {
-        path: "posts",
-        title: "Posts do Usuário",
-        component: UserPost,
-        children: [
-          {
-            path: ":postId",
-            title: "Detalhe do Post",
-            component: PostDetails,
-          },
-        ],
-      },
-    ],
+    path: "contacts",
+    component: Contacts,
+  },
+  {
+    path: "informations",
+    component: AppServiceInformations,
+  },
+
+  {
+    path: "cards",
+    component: Cards,
+    pathMatch: "full",
+    loadChildren: () =>
+      import(
+        "./components/app-service-router/components/cards/cards.routes"
+      ).then((m) => m.cardsRoutes),
   },
   {
     path: "**",
