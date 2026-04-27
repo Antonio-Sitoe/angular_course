@@ -1,9 +1,9 @@
 import { Component } from "@angular/core";
-import { AppServiceRouterComponent } from "./components/app-service-router/app.service.router";
+import { AppRouterGuardsComponent } from "./components/app-router-guards/app-router-guards";
 
 @Component({
   selector: "app-root",
-  imports: [AppServiceRouterComponent],
+  imports: [AppRouterGuardsComponent],
   templateUrl: "./app.html",
 })
 export class App {}
