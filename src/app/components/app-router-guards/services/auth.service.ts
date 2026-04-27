@@ -41,4 +41,13 @@ export class AuthService {
     const decode: any = jwtDecode(token!);
     return decode.scopes || [];
   }
+
+  getUserWalletStatus(): string {
+    const token = localStorage.getItem("access-token");
+    if (!token) {
+      return "";
+    }
+    const decode: any = jwtDecode(token!);
+    return decode.walletStatus || "inactive";
+  }
 }

@@ -5,77 +5,78 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  &__container {
-    width: 95%;
-    height: 95%;
-    border-radius: 5px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.login__container {
+  width: 95%;
+  height: 95%;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  &__form {
-    padding: 20px;
-  }
+.login__form {
+  padding: 20px;
+}
 
-  &__title {
-    margin-bottom: 15px;
+.login__title {
+  margin-bottom: 15px;
+}
 
-    p {
-      font-size: 10px;
-    }
-  }
+.login__title p {
+  font-size: 10px;
+}
 
-  &__fields {
-    padding: 7px 0;
+.login__fields {
+  padding: 7px 0;
+}
 
-    p {
-      font-size: 12px;
-      font-weight: bold;
-    }
+.login__fields p {
+  font-size: 12px;
+  font-weight: bold;
+}
 
-    input {
-      width: 100%;
-      padding: 2px 5px;
-      border-radius: 5px;
-      border: 1.2px solid #b2b7b2;
-      font-size: 12px;
-    }
+.login__fields input {
+  width: 100%;
+  padding: 2px 5px;
+  border-radius: 5px;
+  border: 1.2px solid #b2b7b2;
+  font-size: 12px;
+}
 
-    input:focus {
-      outline-color: #6f9265;
-      font-weight: bold;
-    }
-  }
+.login__fields input:focus {
+  outline-color: #6f9265;
+  font-weight: bold;
+}
 
-  &__alert-message {
-    p {
-      font-size: 12px;
-      color: rgb(200, 72, 72);
-    }
-  }
+.login__alert-message {
+}
 
-  &__button {
-    width: 100%;
-    padding: 5px;
-    border: none;
-    color: white;
-    background: linear-gradient(
-      279deg,
-      rgb(32 62 27 / 86%) 4%,
-      rgb(69, 105, 57) 35%,
-      rgb(111, 146, 101) 74%
-    );
-    border-radius: 4px;
-    margin-top: 10px;
-    font-size: 13px;
-    cursor: pointer;
-    position: relative;
+.login__alert-message p {
+  font-size: 12px;
+  color: rgb(200, 72, 72);
+}
 
-    &:active {
-      top: 3px;
-    }
-  }
+.login__button {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  color: white;
+  background: linear-gradient(
+    279deg,
+    rgb(32 62 27 / 86%) 4%,
+    rgb(69, 105, 57) 35%,
+    rgb(111, 146, 101) 74%
+  );
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  position: relative;
+}
+
+.login__button:active {
+  top: 3px;
 }

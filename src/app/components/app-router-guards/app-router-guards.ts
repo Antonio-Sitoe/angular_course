@@ -1,10 +1,12 @@
 import { Component, inject } from "@angular/core";
 import { AuthService } from "./services/auth.service";
+import { RouterOutlet } from "@angular/router";
 
 @Component({
   selector: "app-app-router-guards",
   templateUrl: "./app-router-guards.html",
   styleUrls: ["./app-router-guards.css"],
+  imports: [RouterOutlet],
 })
 export class AppRouterGuardsComponent {
   private readonly _authService = inject(AuthService);
